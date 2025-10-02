@@ -1,7 +1,21 @@
-import { cn } from "clsx-for-tailwind";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
+import LogIn from "./pages/LogIn";
+import SignIn from "./pages/SignIn";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: SignIn,
+  },
+  {
+    path: "/login",
+    Component: LogIn,
+  },
+]);
 
 function App() {
-  return <h1 className={cn("text-lg font-bold")}>VitalMedic</h1>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
